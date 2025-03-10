@@ -1,7 +1,5 @@
 # assignment-1
-# CS & CC
-
-# Distributed System Using Docker and Kubernetes
+Distributed System Using Docker and Kubernetes
 
 ## Project Overview
 This project is a distributed system that includes:
