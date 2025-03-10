@@ -66,11 +66,7 @@ distributed-system/
 
 Contributors
 
-	•	[Your Name] - GitHub Profile
-	•	Team Members (if applicable)
-
-License
-
-This project is licensed under the MIT License.
-
----
+	•	 [Dhruvi Jivani] - GitHub Profile
+	•	 Shrushti Upadhyay
+ 	•	 Nomankhan
+ 
