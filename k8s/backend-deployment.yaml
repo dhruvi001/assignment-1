@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -15,5 +15,6 @@ spec:
       containers:
       - name: backend
         image: backend-image
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
