@@ -1,21 +1,14 @@
-from flask import Flask, request, jsonify
-import psycopg2
+from flask import Flask
+from prometheus_flask_exporter import PrometheusMetrics  # Import Prometheus exporter
 
 app = Flask(__name__)
 
-def get_db_connection():
-    return psycopg2.connect(database="users_db", user="user", password="password", host="db", port="5432")
+# Initialize Prometheus metrics
+metrics = PrometheusMetrics(app)
 
-@app.route('/api/data', methods=['POST'])
-def store_data():
-    data = request.json
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (data['name'], data['email']))
-    conn.commit()
-    cur.close()
-    conn.close()
-    return jsonify({"message": "Data stored successfully"}), 201
+@app.route('/')
+def home():
+    return "Welcome to the Flask Backend!"
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
